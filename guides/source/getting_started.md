@@ -1,22 +1,20 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
 
-Getting Started with Rails
-==========================
+# Getting Started with Rails
 
 This guide covers getting up and running with Ruby on Rails.
 
 After reading this guide, you will know:
 
-* How to install Rails, create a new Rails application, and connect your
+- How to install Rails, create a new Rails application, and connect your
   application to a database.
-* The general layout of a Rails application.
-* The basic principles of MVC (Model, View, Controller) and RESTful design.
-* How to quickly generate the starting pieces of a Rails application.
+- The general layout of a Rails application.
+- The basic principles of MVC (Model, View, Controller) and RESTful design.
+- How to quickly generate the starting pieces of a Rails application.
 
---------------------------------------------------------------------------------
+---
 
-Guide Assumptions
------------------
+## Guide Assumptions
 
 This guide is designed for beginners who want to get started with a Rails
 application from scratch. It does not assume that you have any prior experience
@@ -27,15 +25,14 @@ If you have no prior experience with Ruby, you will find a very steep learning
 curve diving straight into Rails. There are several curated lists of online resources
 for learning Ruby:
 
-* [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
-* [List of Free Programming Books](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#ruby)
+- [Official Ruby Programming Language website](https://www.ruby-lang.org/en/documentation/)
+- [List of Free Programming Books](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#ruby)
 
 Be aware that some resources, while still excellent, cover versions of Ruby as old as
 1.6, and commonly 1.8, and will not include some syntax that you will see in day-to-day
 development with Rails.
 
-What is Rails?
---------------
+## What is Rails?
 
 Rails is a web application development framework written in the Ruby programming language.
 It is designed to make programming web applications easier by making assumptions
@@ -53,16 +50,16 @@ learned elsewhere, you may have a less happy experience.
 
 The Rails philosophy includes two major guiding principles:
 
-* **Don't Repeat Yourself:** DRY is a principle of software development which
+- **Don't Repeat Yourself:** DRY is a principle of software development which
   states that "Every piece of knowledge must have a single, unambiguous, authoritative
   representation within a system". By not writing the same information over and over
   again, our code is more maintainable, more extensible, and less buggy.
-* **Convention Over Configuration:** Rails has opinions about the best way to do many
+- **Convention Over Configuration:** Rails has opinions about the best way to do many
   things in a web application, and defaults to this set of conventions, rather than
   require that you specify minutiae through endless configuration files.
 
-Creating a New Rails Project
-----------------------------
+## Creating a New Rails Project
+
 The best way to read this guide is to follow it step by step. All steps are
 essential to run this example application and no additional code or steps are
 needed.
@@ -80,10 +77,10 @@ your prompt will look something like `c:\source_code>`
 Before you install Rails, you should check to make sure that your system has the
 proper prerequisites installed. These include:
 
-* Ruby
-* SQLite3
-* Node.js
-* Yarn
+- Ruby
+- SQLite3
+- Node.js
+- Yarn
 
 #### Installing Ruby
 
@@ -198,29 +195,28 @@ up the structure of a Rails application. Most of the work in this tutorial will
 happen in the `app` folder, but here's a basic rundown on the function of each
 of the files and folders that Rails created by default:
 
-| File/Folder | Purpose |
-| ----------- | ------- |
-|app/|Contains the controllers, models, views, helpers, mailers, channels, jobs, and assets for your application. You'll focus on this folder for the remainder of this guide.|
-|bin/|Contains the rails script that starts your app and can contain other scripts you use to set up, update, deploy, or run your application.|
-|config/|Configure your application's routes, database, and more. This is covered in more detail in [Configuring Rails Applications](configuring.html).|
-|config.ru|Rack configuration for Rack based servers used to start the application. For more information about Rack, see the [Rack website](https://rack.github.io/).|
-|db/|Contains your current database schema, as well as the database migrations.|
-|Gemfile<br>Gemfile.lock|These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the [Bundler website](https://bundler.io).|
-|lib/|Extended modules for your application.|
-|log/|Application log files.|
-|package.json|This file allows you to specify what npm dependencies are needed for your Rails application. This file is used by Yarn. For more information about Yarn, see the [Yarn website](https://yarnpkg.com/lang/en/).|
-|public/|The only folder seen by the world as-is. Contains static files and compiled assets.|
-|Rakefile|This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing `Rakefile`, you should add your own tasks by adding files to the `lib/tasks` directory of your application.|
-|README.md|This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.|
-|storage/|Active Storage files for Disk Service. This is covered in [Active Storage Overview](active_storage_overview.html).|
-|test/|Unit tests, fixtures, and other test apparatus. These are covered in [Testing Rails Applications](testing.html).|
-|tmp/|Temporary files (like cache and pid files).|
-|vendor/|A place for all third-party code. In a typical Rails application this includes vendored gems.|
-|.gitignore|This file tells git which files (or patterns) it should ignore. See [GitHub - Ignoring files](https://help.github.com/articles/ignoring-files) for more info about ignoring files.
-|.ruby-version|This file contains the default Ruby version.|
+| File/Folder             | Purpose                                                                                                                                                                                                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| app/                    | Contains the controllers, models, views, helpers, mailers, channels, jobs, and assets for your application. You'll focus on this folder for the remainder of this guide.                                                                                                       |
+| bin/                    | Contains the rails script that starts your app and can contain other scripts you use to set up, update, deploy, or run your application.                                                                                                                                       |
+| config/                 | Configure your application's routes, database, and more. This is covered in more detail in [Configuring Rails Applications](configuring.html).                                                                                                                                 |
+| config.ru               | Rack configuration for Rack based servers used to start the application. For more information about Rack, see the [Rack website](https://rack.github.io/).                                                                                                                     |
+| db/                     | Contains your current database schema, as well as the database migrations.                                                                                                                                                                                                     |
+| Gemfile<br>Gemfile.lock | These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. For more information about Bundler, see the [Bundler website](https://bundler.io).                                                      |
+| lib/                    | Extended modules for your application.                                                                                                                                                                                                                                         |
+| log/                    | Application log files.                                                                                                                                                                                                                                                         |
+| package.json            | This file allows you to specify what npm dependencies are needed for your Rails application. This file is used by Yarn. For more information about Yarn, see the [Yarn website](https://yarnpkg.com/lang/en/).                                                                 |
+| public/                 | The only folder seen by the world as-is. Contains static files and compiled assets.                                                                                                                                                                                            |
+| Rakefile                | This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing `Rakefile`, you should add your own tasks by adding files to the `lib/tasks` directory of your application. |
+| README.md               | This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on.                                                                                                                     |
+| storage/                | Active Storage files for Disk Service. This is covered in [Active Storage Overview](active_storage_overview.html).                                                                                                                                                             |
+| test/                   | Unit tests, fixtures, and other test apparatus. These are covered in [Testing Rails Applications](testing.html).                                                                                                                                                               |
+| tmp/                    | Temporary files (like cache and pid files).                                                                                                                                                                                                                                    |
+| vendor/                 | A place for all third-party code. In a typical Rails application this includes vendored gems.                                                                                                                                                                                  |
+| .gitignore              | This file tells git which files (or patterns) it should ignore. See [GitHub - Ignoring files](https://help.github.com/articles/ignoring-files) for more info about ignoring files.                                                                                             |
+| .ruby-version           | This file contains the default Ruby version.                                                                                                                                                                                                                                   |
 
-Hello, Rails!
--------------
+## Hello, Rails!
 
 To begin with, let's get some text up on screen quickly. To do this, you need to
 get your Rails application server running.
@@ -297,8 +293,7 @@ This is your application's _routing file_ which holds entries in a special [DSL
 language)](https://en.wikipedia.org/wiki/Domain-specific_language) that tells
 Rails how to connect incoming requests to controllers and actions.
 
-The line that we have just added says that we are going to match a `GET
-/articles` request to `articles#index`. This string passed as the `to` option
+The line that we have just added says that we are going to match a `GET /articles` request to `articles#index`. This string passed as the `to` option
 represents the _controller_ and _action_ that will be responsible for handling
 this request.
 
@@ -405,16 +400,14 @@ tells Rails to map requests to <http://localhost:3000/welcome/index> to the
 welcome controller's index action. This was created earlier when you ran the
 controller generator (`bin/rails generate controller Welcome index`).
 
-Launch the web server again if you stopped it to generate the controller (`bin/rails
-server`) and navigate to <http://localhost:3000> in your browser. You'll see the
+Launch the web server again if you stopped it to generate the controller (`bin/rails server`) and navigate to <http://localhost:3000> in your browser. You'll see the
 "Hello, Rails!" message you put into `app/views/welcome/index.html.erb`,
 indicating that this new route is indeed going to `WelcomeController`'s `index`
 action and is rendering the view correctly.
 
 TIP: For more information about routing, refer to [Rails Routing from the Outside In](routing.html).
 
-Getting Up and Running
-----------------------
+## Getting Up and Running
 
 Now that you've seen how to create a controller, an action, and a view, let's
 create something with a bit more substance.
@@ -440,7 +433,7 @@ end
 ```
 
 If you run `bin/rails routes`, you'll see that it has defined routes for all the
-standard RESTful actions.  The meaning of the prefix column (and other columns)
+standard RESTful actions. The meaning of the prefix column (and other columns)
 will be seen later, but for now notice that Rails has inferred the
 singular form `article` and makes meaningful use of the distinction.
 
@@ -529,8 +522,7 @@ end
 With the `new` method defined in `ArticlesController`, if you refresh
 <http://localhost:3000/articles/new> you'll see another error:
 
-![Template is missing for articles/new]
-(images/getting_started/template_is_missing_articles_new.png)
+![Template is missing for articles/new](images/getting_started/template_is_missing_articles_new.png)
 
 You're getting this error now because Rails expects plain actions like this one
 to have views associated with them to display their information. With no view
@@ -538,10 +530,10 @@ available, Rails will raise an exception.
 
 Let's look at the full error message again:
 
->ArticlesController#new is missing a template for request formats: text/html
+> ArticlesController#new is missing a template for request formats: text/html
 
->NOTE!
->Unless told otherwise, Rails expects an action to render a template with the same name, contained in a folder named after its controller. If this controller is an API responding with 204 (No Content), which does not require a template, then this error will occur when trying to access it via browser, since we expect an HTML template to be rendered for such requests. If that's the case, carry on.
+> NOTE!
+> Unless told otherwise, Rails expects an action to render a template with the same name, contained in a folder named after its controller. If this controller is an API responding with 204 (No Content), which does not require a template, then this error will occur when trying to access it via browser, since we expect an HTML template to be rendered for such requests. If that's the case, carry on.
 
 The message identifies which template is missing. In this case, it's the
 `articles/new` template. Rails will first look for this template. If not found,
@@ -580,26 +572,26 @@ harmoniously! It's time to create the form for a new article.
 
 ### The first form
 
-To create a form within this template, you will use a *form
-builder*. The primary form builder for Rails is provided by a helper
+To create a form within this template, you will use a _form
+builder_. The primary form builder for Rails is provided by a helper
 method called `form_with`. To use this method, add this code into
 `app/views/articles/new.html.erb`:
 
 ```html+erb
 <%= form_with scope: :article, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+<p>
+  <%= form.label :title %><br />
+  <%= form.text_field :title %>
+</p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+<p>
+  <%= form.label :text %><br />
+  <%= form.text_area :text %>
+</p>
 
-  <p>
-    <%= form.submit %>
-  </p>
+<p>
+  <%= form.submit %>
+</p>
 <% end %>
 ```
 
@@ -659,8 +651,7 @@ form and then click the submit button to begin the process of creating a new
 article, so go ahead and do that. When you submit the form, you should see a
 familiar error:
 
-![Unknown action create for ArticlesController]
-(images/getting_started/unknown_action_create_for_articles.png)
+![Unknown action create for ArticlesController](images/getting_started/unknown_action_create_for_articles.png)
 
 You now need to create the `create` action within the `ArticlesController` for
 this to work.
@@ -778,8 +769,7 @@ in case you want to reverse it later. When you run this migration it will create
 an `articles` table with one string column and a text column. It also creates
 two timestamp fields to allow Rails to track article creation and update times.
 
-TIP: For more information about migrations, refer to [Active Record Migrations]
-(active_record_migrations.html).
+TIP: For more information about migrations, refer to [Active Record Migrations](active_record_migrations.html).
 
 At this point, you can use a rails command to run the migration:
 
@@ -831,11 +821,10 @@ TIP: You might be wondering why the `A` in `Article.new` is capitalized above, w
 TIP: As we'll see later, `@article.save` returns a boolean indicating whether
 the article was saved or not.
 
-If you now go to <http://localhost:3000/articles/new> you'll *almost* be able
+If you now go to <http://localhost:3000/articles/new> you'll _almost_ be able
 to create an article. Try it! You should get an error that looks like this:
 
-![Forbidden attributes for new article]
-(images/getting_started/forbidden_attributes_for_new_article.png)
+![Forbidden attributes for new article](images/getting_started/forbidden_attributes_for_new_article.png)
 
 Rails has several security features that help you write secure applications,
 and you're running into one of them now. This one is called [strong parameters](action_controller_overview.html#strong-parameters),
@@ -880,8 +869,7 @@ private
 ```
 
 TIP: For more information, refer to the reference above and
-[this blog article about Strong Parameters]
-(https://weblog.rubyonrails.org/2012/3/21/strong-parameters/).
+[this blog article about Strong Parameters](https://weblog.rubyonrails.org/2012/3/21/strong-parameters/).
 
 ### Showing Articles
 
@@ -992,11 +980,11 @@ And then finally, add the view for this action, located at
   </tr>
 
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-    </tr>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+  </tr>
   <% end %>
 </table>
 ```
@@ -1145,39 +1133,36 @@ something went wrong. To do that, you'll modify
 `app/views/articles/new.html.erb` to check for error messages:
 
 ```html+erb
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-
+<%= form_with scope: :article, url: articles_path, local: true do |form| %> <%
+if @article.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@article.errors.count, "error") %> prohibited this article
+    from being saved:
+  </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<p>
+  <%= form.label :title %><br />
+  <%= form.text_field :title %>
+</p>
+
+<p>
+  <%= form.label :text %><br />
+  <%= form.text_area :text %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+
+<% end %> <%= link_to 'Back', articles_path %>
 ```
 
 A few things are going on. We check if there are any errors with
@@ -1231,9 +1216,8 @@ def create
 end
 ```
 
-NOTE:  We're using `edit` to render a view. For the actual
+NOTE: We're using `edit` to render a view. For the actual
 saving of the changes to the Article, we'll add an `update` action later.
-
 
 The view will contain a form similar to the one we used when creating
 new articles. Create a file called `app/views/articles/edit.html.erb` and make
@@ -1242,39 +1226,36 @@ it look as follows:
 ```html+erb
 <h1>Edit Article</h1>
 
-<%= form_with model: @article, local: true do |form| %>
-
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-
+<%= form_with model: @article, local: true do |form| %> <% if
+@article.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@article.errors.count, "error") %> prohibited this article
+    from being saved:
+  </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<p>
+  <%= form.label :title %><br />
+  <%= form.text_field :title %>
+</p>
+
+<p>
+  <%= form.label :text %><br />
+  <%= form.text_area :text %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+
+<% end %> <%= link_to 'Back', articles_path %>
 ```
 
 This time we point the form to the `update` action, which is not defined yet
@@ -1287,10 +1268,9 @@ expected to use to **update** resources according to the REST protocol.
 
 Also, passing a model object to `form_with`, like `model: @article` in the edit
 view above, will cause form helpers to fill in form fields with the corresponding
-values of the object.  Passing in a symbol scope such as `scope: :article`, as
+values of the object. Passing in a symbol scope such as `scope: :article`, as
 was done in the new view, only creates empty form fields.
-More details can be found in [form_with documentation]
-(https://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-form_with).
+More details can be found in [form_with documentation](https://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-form_with).
 
 Next, we need to create the `update` action in
 `app/controllers/articles_controller.rb`.
@@ -1352,12 +1332,12 @@ it appear next to the "Show" link:
   </tr>
 
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    </tr>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+  </tr>
   <% end %>
 </table>
 ```
@@ -1367,10 +1347,8 @@ well, so that there's also an "Edit" link on an article's page. Add this at the
 bottom of the template:
 
 ```html+erb
-...
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+... <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to 'Back',
+articles_path %>
 ```
 
 And here's how our app looks so far:
@@ -1391,46 +1369,44 @@ Create a new file `app/views/articles/_form.html.erb` with the following
 content:
 
 ```html+erb
-<%= form_with model: @article, local: true do |form| %>
+<%= form_with model: @article, local: true do |form| %> <% if
+@article.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@article.errors.count, "error") %> prohibited this article
+    from being saved:
+  </h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@article.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<p>
+  <%= form.label :title %><br />
+  <%= form.text_field :title %>
+</p>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+<p>
+  <%= form.label :text %><br />
+  <%= form.text_area :text %>
+</p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+<p>
+  <%= form.submit %>
+</p>
 
 <% end %>
 ```
 
 Everything except for the `form_with` declaration remained the same.
 The reason we can use this shorter `form_with` declaration
-to stand in for either of the other forms is that `@article` is a *resource*
+to stand in for either of the other forms is that `@article` is a _resource_
 corresponding to a full set of RESTful routes, and Rails is able to infer
 which URI and method to use.
-For more information about this use of `form_with`, see [Resource-oriented style]
-(https://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-form_with-label-Resource-oriented+style).
+For more information about this use of `form_with`, see [Resource-oriented style](https://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html#method-i-form_with-label-Resource-oriented+style).
 
 Now, let's update the `app/views/articles/new.html.erb` view to use this new
 partial, rewriting it completely:
@@ -1438,9 +1414,7 @@ partial, rewriting it completely:
 ```html+erb
 <h1>New Article</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<%= render 'form' %> <%= link_to 'Back', articles_path %>
 ```
 
 Then do the same for the `app/views/articles/edit.html.erb` view:
@@ -1448,9 +1422,7 @@ Then do the same for the `app/views/articles/edit.html.erb` view:
 ```html+erb
 <h1>Edit Article</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<%= render 'form' %> <%= link_to 'Back', articles_path %>
 ```
 
 ### Deleting Articles
@@ -1468,7 +1440,7 @@ resources. If this was left as a typical `get` route, it could be possible for
 people to craft malicious URLs like this:
 
 ```html
-<a href='http://example.com/articles/1/destroy'>look at this cat!</a>
+<a href="http://example.com/articles/1/destroy">look at this cat!</a>
 ```
 
 We use the `delete` method for destroying resources, and this route is mapped
@@ -1559,15 +1531,16 @@ Finally, add a 'Destroy' link to your `index` action template
   </tr>
 
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td>
+      <%= link_to 'Destroy', article_path(article), method: :delete, data: {
+      confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
   <% end %>
 </table>
 ```
@@ -1576,7 +1549,7 @@ Here we're using `link_to` in a different way. We pass the named route as the
 second argument, and then the options as another argument. The `method: :delete`
 and `data: { confirm: 'Are you sure?' }` options are used as HTML5 attributes so
 that when the link is clicked, Rails will first show a confirm dialog to the
-user, and then submit the link with method `delete`.  This is done via the
+user, and then submit the link with method `delete`. This is done via the
 JavaScript file `rails-ujs` which is automatically included in your
 application's layout (`app/views/layouts/application.html.erb`) when you
 generated the application. Without this file, the confirmation dialog box won't
@@ -1594,8 +1567,7 @@ TIP: In general, Rails encourages using resources objects instead of
 declaring routes manually. For more information about routing, see
 [Rails Routing from the Outside In](routing.html).
 
-Adding a Second Model
----------------------
+## Adding a Second Model
 
 It's time to add a second model to the application. The second model will handle
 comments on articles.
@@ -1616,7 +1588,7 @@ This command will generate four files:
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | db/migrate/20140120201010_create_comments.rb | Migration to create the comments table in your database (your name will include a different timestamp) |
 | app/models/comment.rb                        | The Comment model                                                                                      |
-| test/models/comment_test.rb                  | Testing harness for the comment model                                                                 |
+| test/models/comment_test.rb                  | Testing harness for the comment model                                                                  |
 | test/fixtures/comments.yml                   | Sample comments for use in testing                                                                     |
 
 First, take a look at `app/models/comment.rb`:
@@ -1677,8 +1649,8 @@ Active Record associations let you easily declare the relationship between two
 models. In the case of comments and articles, you could write out the
 relationships this way:
 
-* Each comment belongs to one article.
-* One article can have many comments.
+- Each comment belongs to one article.
+- One article can have many comments.
 
 In fact, this is very close to the syntax that Rails uses to declare this
 association. You've already seen the line of code inside the `Comment` model
@@ -1768,22 +1740,21 @@ So first, we'll wire up the Article show template
 </p>
 
 <h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= form_with model: [ @article, @article.comments.build ], local: true do
+|form| %>
+<p>
+  <%= form.label :commenter %><br />
+  <%= form.text_field :commenter %>
+</p>
+<p>
+  <%= form.label :body %><br />
+  <%= form.text_area :body %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %> <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to
+'Back', articles_path %>
 ```
 
 This adds a form on the `Article` show page that creates a new comment by
@@ -1837,34 +1808,33 @@ add that to the `app/views/articles/show.html.erb`.
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
 <% end %>
 
 <h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= form_with model: [ @article, @article.comments.build ], local: true do
+|form| %>
+<p>
+  <%= form.label :commenter %><br />
+  <%= form.text_field :commenter %>
+</p>
+<p>
+  <%= form.label :body %><br />
+  <%= form.text_area :body %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %> <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to
+'Back', articles_path %>
 ```
 
 Now you can add articles and comments to your blog and have them show up in the
@@ -1872,8 +1842,7 @@ right places.
 
 ![Article with Comments](images/getting_started/article_with_comments.png)
 
-Refactoring
------------
+## Refactoring
 
 Now that we have articles and comments working, take a look at the
 `app/views/articles/show.html.erb` template. It is getting long and awkward. We
@@ -1915,22 +1884,21 @@ following:
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= form_with model: [ @article, @article.comments.build ], local: true do
+|form| %>
+<p>
+  <%= form.label :commenter %><br />
+  <%= form.text_field :commenter %>
+</p>
+<p>
+  <%= form.label :body %><br />
+  <%= form.text_area :body %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %> <%= link_to 'Edit', edit_article_path(@article) %> | <%= link_to
+'Back', articles_path %>
 ```
 
 This will now render the partial in `app/views/comments/_comment.html.erb` once
@@ -1945,18 +1913,19 @@ Let us also move that new comment section out to its own partial. Again, you
 create a file `app/views/comments/_form.html.erb` containing:
 
 ```html+erb
-<%= form_with model: [ @article, @article.comments.build ], local: true do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with model: [ @article, @article.comments.build ], local: true do
+|form| %>
+<p>
+  <%= form.label :commenter %><br />
+  <%= form.text_field :commenter %>
+</p>
+<p>
+  <%= form.label :body %><br />
+  <%= form.text_area :body %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
 <% end %>
 ```
 
@@ -1977,10 +1946,8 @@ Then you make the `app/views/articles/show.html.erb` look like the following:
 <%= render @article.comments %>
 
 <h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= render 'comments/form' %> <%= link_to 'Edit', edit_article_path(@article) %>
+| <%= link_to 'Back', articles_path %>
 ```
 
 The second render just defines the partial template we want to render,
@@ -1991,17 +1958,16 @@ the `app/views/comments` directory.
 The `@article` object is available to any partials rendered in the view because
 we defined it as an instance variable.
 
-
 ### Using Concerns
 
 Concerns are a way to make large controllers or models easier to understand and manage. This also has the advantage of reusability when multiple models (or controllers) share the same concerns. Concerns are implemented using modules that contain methods representing a well-defined slice of the functionality that a model or controller is responsible for. In other languages, modules are often known as mixins.
 
 You can use concerns in your controller or model the same way you would use any module. When you first created your app with `rails new blog`, two folders were created within `app/` along with the rest:
 
- ```
- app/controllers/concerns
- app/models/concerns
- ```
+```
+app/controllers/concerns
+app/models/concerns
+```
 
 A given blog article might have various statuses - for instance, it might be visible to everyone (i.e. `public`), or only visible to the author (i.e. `private`). It may also be hidden to all but still retrievable (i.e. `archived`). Comments may similarly be hidden or visible. This could be represented using a `status` column in each model.
 
@@ -2051,23 +2017,22 @@ Then, in our `index` action template (`app/views/articles/index.html.erb`) we wo
     <th colspan="3"></th>
   </tr>
 
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  <% end %>
+  <% @articles.each do |article| %> <% unless article.archived? %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td>
+      <%= link_to 'Destroy', article_path(article), method: :delete, data: {
+      confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %> <% end %>
 </table>
 ```
 
-However, if you look again at our models now, you can see that the logic is duplicated. If in the future we increase the functionality of our blog - to include private messages, for instance -  we might find ourselves duplicating the logic yet again. This is where concerns come in handy.
+However, if you look again at our models now, you can see that the logic is duplicated. If in the future we increase the functionality of our blog - to include private messages, for instance - we might find ourselves duplicating the logic yet again. This is where concerns come in handy.
 
 A concern is only responsible for a focused subset of the model's responsibility; the methods in our concern will all be related to the visibility of a model. Let's call our new concern (module) `Visible`. We can create a new file inside `app/models/concerns` called `visible.rb` , and store all of the status methods that were duplicated in the models.
 
@@ -2100,7 +2065,6 @@ end
 ```
 
 Now, we can remove the duplicated logic from each model and instead include our new `Visible` module:
-
 
 In `app/models/article.rb`:
 
@@ -2161,24 +2125,22 @@ Our blog has <%= Article.public_count %> articles and counting! Add yours now.
     <th colspan="3"></th>
   </tr>
 
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  <% end %>
+  <% @articles.each do |article| %> <% unless article.archived? %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.text %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td>
+      <%= link_to 'Destroy', article_path(article), method: :delete, data: {
+      confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %> <% end %>
 </table>
 ```
 
-Deleting Comments
------------------
+## Deleting Comments
 
 Another important feature of a blog is being able to delete spam comments. To do
 this, we need to implement a link of some sort in the view and a `destroy`
@@ -2199,14 +2161,12 @@ So first, let's add the delete link in the
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete,
+  data: { confirm: 'Are you sure?' } %>
 </p>
 ```
 
-Clicking this new "Destroy Comment" link will fire off a `DELETE
-/articles/:article_id/comments/:id` to our `CommentsController`, which can then
+Clicking this new "Destroy Comment" link will fire off a `DELETE /articles/:article_id/comments/:id` to our `CommentsController`, which can then
 use this to find the comment we want to delete, so let's add a `destroy` action
 to our controller (`app/controllers/comments_controller.rb`):
 
@@ -2236,7 +2196,6 @@ The `destroy` action will find the article we are looking at, locate the comment
 within the `@article.comments` collection, and then remove it from the
 database and send us back to the show action for the article.
 
-
 ### Deleting Associated Objects
 
 If you delete an article, its associated comments will also need to be
@@ -2254,8 +2213,7 @@ class Article < ApplicationRecord
 end
 ```
 
-Security
---------
+## Security
 
 ### Basic Authentication
 
@@ -2314,16 +2272,13 @@ authentication add-ons for Rails are the
 the [Authlogic](https://github.com/binarylogic/authlogic) gem,
 along with a number of others.
 
-
 ### Other Security Considerations
 
 Security, especially in web applications, is a broad and detailed area. Security
 in your Rails application is covered in more depth in
 the [Ruby on Rails Security Guide](security.html).
 
-
-What's Next?
-------------
+## What's Next?
 
 Now that you've seen your first Rails application, you should feel free to
 update it and experiment on your own.
@@ -2332,13 +2287,11 @@ Remember, you don't have to do everything without help. As you need assistance
 getting up and running with Rails, feel free to consult these support
 resources:
 
-* The [Ruby on Rails Guides](index.html)
-* The [Ruby on Rails mailing list](https://discuss.rubyonrails.org/c/rubyonrails-talk)
-* The [#rubyonrails](irc://irc.freenode.net/#rubyonrails) channel on irc.freenode.net
+- The [Ruby on Rails Guides](index.html)
+- The [Ruby on Rails mailing list](https://discuss.rubyonrails.org/c/rubyonrails-talk)
+- The [#rubyonrails](irc://irc.freenode.net/#rubyonrails) channel on irc.freenode.net
 
-
-Configuration Gotchas
----------------------
+## Configuration Gotchas
 
 The easiest way to work with Rails is to store all external data as UTF-8. If
 you don't, Ruby libraries and Rails will often be able to convert your native
@@ -2355,14 +2308,14 @@ cannot be automatically detected by Rails and corrected.
 
 Two very common sources of data that are not UTF-8:
 
-* Your text editor: Most text editors (such as TextMate), default to saving
+- Your text editor: Most text editors (such as TextMate), default to saving
   files as UTF-8. If your text editor does not, this can result in special
   characters that you enter in your templates (such as é) to appear as a diamond
   with a question mark inside in the browser. This also applies to your i18n
   translation files. Most editors that do not already default to UTF-8 (such as
   some versions of Dreamweaver) offer a way to change the default to UTF-8. Do
   so.
-* Your database: Rails defaults to converting data from your database into UTF-8
+- Your database: Rails defaults to converting data from your database into UTF-8
   at the boundary. However, if your database is not using UTF-8 internally, it
   may not be able to store all characters that your users enter. For instance,
   if your database is using Latin-1 internally, and your user enters a Russian,

@@ -1,27 +1,25 @@
 **DO NOT READ THIS FILE ON GITHUB, GUIDES ARE PUBLISHED ON https://guides.rubyonrails.org.**
 
-Contributing to Ruby on Rails
-=============================
+# Contributing to Ruby on Rails
 
 This guide covers ways in which _you_ can become a part of the ongoing development of Ruby on Rails.
 
 After reading this guide, you will know:
 
-* How to use GitHub to report issues.
-* How to clone master and run the test suite.
-* How to help resolve existing issues.
-* How to contribute to the Ruby on Rails documentation.
-* How to contribute to the Ruby on Rails code.
+- How to use GitHub to report issues.
+- How to clone master and run the test suite.
+- How to help resolve existing issues.
+- How to contribute to the Ruby on Rails documentation.
+- How to contribute to the Ruby on Rails code.
 
 Ruby on Rails is not "someone else's framework". Over the years, thousands of people have contributed to Ruby on Rails ranging from a single character to massive architectural changes or significant documentation - all with the goal of making Ruby on Rails better for everyone. Even if you don't feel up to writing code or documentation yet, there are a variety of other ways that you can contribute, from reporting issues to testing patches.
 
 As mentioned in [Rails'
 README](https://github.com/rails/rails/blob/master/README.md), everyone interacting in Rails and its sub-projects' codebases, issue trackers, chat rooms, and mailing lists is expected to follow the Rails [code of conduct](https://rubyonrails.org/conduct/).
 
---------------------------------------------------------------------------------
+---
 
-Reporting an Issue
-------------------
+## Reporting an Issue
 
 Ruby on Rails uses [GitHub Issue Tracking](https://github.com/rails/rails/issues) to track issues (primarily bugs and contributions of new code). If you've found a bug in Ruby on Rails, this is the place to start. You'll need to create a (free) GitHub account in order to submit an issue, to comment on them, or to create pull requests.
 
@@ -39,13 +37,13 @@ Then, don't get your hopes up! Unless you have a "Code Red, Mission Critical, th
 
 Having a way to reproduce your issue will be very helpful for others to help confirm, investigate, and ultimately fix your issue. You can do this by providing an executable test case. To make this process easier, we have prepared several bug report templates for you to use as a starting point:
 
-* Template for Active Record (models, database) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_master.rb)
-* Template for testing Active Record (migration) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_migrations_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_migrations_master.rb)
-* Template for Action Pack (controllers, routing) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_controller_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_controller_master.rb)
-* Template for Active Job issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_job_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_job_master.rb)
-* Template for Active Storage issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_storage_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_storage_master.rb)
-* Template for Action Mailbox issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_mailbox_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_mailbox_master.rb)
-* Generic template for other issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/generic_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/generic_master.rb)
+- Template for Active Record (models, database) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_master.rb)
+- Template for testing Active Record (migration) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_migrations_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_record_migrations_master.rb)
+- Template for Action Pack (controllers, routing) issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_controller_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_controller_master.rb)
+- Template for Active Job issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_job_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_job_master.rb)
+- Template for Active Storage issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_storage_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/active_storage_master.rb)
+- Template for Action Mailbox issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_mailbox_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/action_mailbox_master.rb)
+- Generic template for other issues: [gem](https://github.com/rails/rails/blob/master/guides/bug_report_templates/generic_gem.rb) / [master](https://github.com/rails/rails/blob/master/guides/bug_report_templates/generic_master.rb)
 
 These templates include the boilerplate code to set up a test case against either a released version of Rails (`*_gem.rb`) or edge Rails (`*_master.rb`).
 
@@ -82,9 +80,7 @@ won't be accepted". But it's the proper place to discuss new ideas. GitHub
 Issues are not a particularly good venue for the sometimes long and involved
 discussions new features require.
 
-
-Helping to Resolve Existing Issues
-----------------------------------
+## Helping to Resolve Existing Issues
 
 As a next step beyond reporting issues, you can help the core team resolve existing ones by providing feedback about them. If you are new to Rails core development, that might be a great way to walk your first steps, you'll get familiar with the code base and the processes.
 
@@ -117,19 +113,18 @@ $ git pull JohnSmith orange
 
 After applying their branch, test it out! Here are some things to think about:
 
-* Does the change actually work?
-* Are you happy with the tests? Can you follow what they're testing? Are there any tests missing?
-* Does it have the proper documentation coverage? Should documentation elsewhere be updated?
-* Do you like the implementation? Can you think of a nicer or faster way to implement a part of their change?
+- Does the change actually work?
+- Are you happy with the tests? Can you follow what they're testing? Are there any tests missing?
+- Does it have the proper documentation coverage? Should documentation elsewhere be updated?
+- Do you like the implementation? Can you think of a nicer or faster way to implement a part of their change?
 
 Once you're happy that the pull request contains a good change, comment on the GitHub issue indicating your approval. Your comment should indicate that you like the change and what you like about it. Something like:
 
->I like the way you've restructured that code in generate_finder_sql - much nicer. The tests look good too.
+> I like the way you've restructured that code in generate_finder_sql - much nicer. The tests look good too.
 
 If your comment simply reads "+1", then odds are that other reviewers aren't going to take it too seriously. Show that you took the time to review the pull request.
 
-Contributing to the Rails Documentation
----------------------------------------
+## Contributing to the Rails Documentation
 
 Ruby on Rails has two main sets of documentation: the guides, which help you
 learn about Ruby on Rails, and the API, which serves as a reference.
@@ -143,19 +138,18 @@ When working with documentation, please take into account the [API Documentation
 
 NOTE: For documentation changes, your pull request title should include [ci skip]. This will skip running the test suite, helping us to cut down on our server costs. Keep in mind that you should only skip CI when your change touches documentation exclusively.
 
-Translating Rails Guides
-------------------------
+## Translating Rails Guides
 
 We are happy to have people volunteer to translate the Rails guides. Just follow these steps:
 
-* Fork https://github.com/rails/rails.
-* Add a source folder for your own language, for example: *guides/source/it-IT* for Italian.
-* Copy the contents of *guides/source* into your own language directory and translate them.
-* Do NOT translate the HTML files, as they are automatically generated.
+- Fork https://github.com/rails/rails.
+- Add a source folder for your own language, for example: _guides/source/it-IT_ for Italian.
+- Copy the contents of _guides/source_ into your own language directory and translate them.
+- Do NOT translate the HTML files, as they are automatically generated.
 
 Note that translations are not submitted to the Rails repository. As detailed above, your work happens in a fork. This is so because in practice documentation maintenance via patches is only sustainable in English.
 
-To generate the guides in HTML format you will need to install the guides dependencies, `cd` into the *guides* directory, and then run (e.g. for it-IT):
+To generate the guides in HTML format you will need to install the guides dependencies, `cd` into the _guides_ directory, and then run (e.g. for it-IT):
 
 ```bash
 # only install gems necessary for the guides. To undo run: bundle config --delete without
@@ -164,27 +158,26 @@ $ cd guides/
 $ bundle exec rake guides:generate:html GUIDES_LANGUAGE=it-IT
 ```
 
-This will generate the guides in an *output* directory.
+This will generate the guides in an _output_ directory.
 
 NOTE: The Redcarpet Gem doesn't work with JRuby.
 
 Translation efforts we know about (various versions):
 
-* **Italian**: [https://github.com/rixlabs/docrails](https://github.com/rixlabs/docrails)
-* **Spanish**: [https://github.com/latinadeveloper/railsguides.es](https://github.com/latinadeveloper/railsguides.es)
-* **Polish**: [https://github.com/apohllo/docrails](https://github.com/apohllo/docrails)
-* **French** : [https://github.com/railsfrance/docrails](https://github.com/railsfrance/docrails)
-* **Czech** : [https://github.com/rubyonrails-cz/docrails/tree/czech](https://github.com/rubyonrails-cz/docrails/tree/czech)
-* **Turkish** : [https://github.com/ujk/docrails](https://github.com/ujk/docrails)
-* **Korean** : [https://github.com/rorlakr/rails-guides](https://github.com/rorlakr/rails-guides)
-* **Simplified Chinese** : [https://github.com/ruby-china/guides](https://github.com/ruby-china/guides)
-* **Traditional Chinese** : [https://github.com/docrails-tw/guides](https://github.com/docrails-tw/guides)
-* **Russian** : [https://github.com/morsbox/rusrails](https://github.com/morsbox/rusrails)
-* **Japanese** : [https://github.com/yasslab/railsguides.jp](https://github.com/yasslab/railsguides.jp)
-* **Brazilian Portuguese** : [https://github.com/campuscode/rails-guides-pt-BR](https://github.com/campuscode/rails-guides-pt-BR)
+- **Italian**: [https://github.com/rixlabs/docrails](https://github.com/rixlabs/docrails)
+- **Spanish**: [https://github.com/latinadeveloper/railsguides.es](https://github.com/latinadeveloper/railsguides.es)
+- **Polish**: [https://github.com/apohllo/docrails](https://github.com/apohllo/docrails)
+- **French** : [https://github.com/railsfrance/docrails](https://github.com/railsfrance/docrails)
+- **Czech** : [https://github.com/rubyonrails-cz/docrails/tree/czech](https://github.com/rubyonrails-cz/docrails/tree/czech)
+- **Turkish** : [https://github.com/ujk/docrails](https://github.com/ujk/docrails)
+- **Korean** : [https://github.com/rorlakr/rails-guides](https://github.com/rorlakr/rails-guides)
+- **Simplified Chinese** : [https://github.com/ruby-china/guides](https://github.com/ruby-china/guides)
+- **Traditional Chinese** : [https://github.com/docrails-tw/guides](https://github.com/docrails-tw/guides)
+- **Russian** : [https://github.com/morsbox/rusrails](https://github.com/morsbox/rusrails)
+- **Japanese** : [https://github.com/yasslab/railsguides.jp](https://github.com/yasslab/railsguides.jp)
+- **Brazilian Portuguese** : [https://github.com/campuscode/rails-guides-pt-BR](https://github.com/campuscode/rails-guides-pt-BR)
 
-Contributing to the Rails Code
-------------------------------
+## Contributing to the Rails Code
 
 ### Setting Up a Development Environment
 
@@ -239,10 +232,10 @@ and in particular sees any modifications upon server reboot.
 
 Now get busy and add/edit code. You're on your branch now, so you can write whatever you want (make sure you're on the right branch with `git branch -a`). But if you're planning to submit your change back for inclusion in Rails, keep a few things in mind:
 
-* Get the code right.
-* Use Rails idioms and helpers.
-* Include tests that fail without your code, and pass with it.
-* Update the (surrounding) documentation, examples elsewhere, and the guides: whatever is affected by your contribution.
+- Get the code right.
+- Use Rails idioms and helpers.
+- Include tests that fail without your code, and pass with it.
+- Update the (surrounding) documentation, examples elsewhere, and the guides: whatever is affected by your contribution.
 
 TIP: Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability of Rails will generally not be accepted (read more about [our rationales behind this decision](https://github.com/rails/rails/pull/13771#issuecomment-32746700)).
 
@@ -250,17 +243,17 @@ TIP: Changes that are cosmetic in nature and do not add anything substantial to 
 
 Rails follows a simple set of coding style conventions:
 
-* Two spaces, no tabs (for indentation).
-* No trailing whitespace. Blank lines should not have any spaces.
-* Indent and no blank line after private/protected.
-* Use Ruby >= 1.9 syntax for hashes. Prefer `{ a: :b }` over `{ :a => :b }`.
-* Prefer `&&`/`||` over `and`/`or`.
-* Prefer `class << self` over `self.method` for class methods.
-* Use `my_method(my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
-* Use `a = b` and not `a=b`.
-* Use `assert_not` methods instead of `refute`.
-* Prefer `method { do_stuff }` instead of `method{do_stuff}` for single-line blocks.
-* Follow the conventions in the source you see used already.
+- Two spaces, no tabs (for indentation).
+- No trailing whitespace. Blank lines should not have any spaces.
+- Indent and no blank line after private/protected.
+- Use Ruby >= 1.9 syntax for hashes. Prefer `{ a: :b }` over `{ :a => :b }`.
+- Prefer `&&`/`||` over `and`/`or`.
+- Prefer `class << self` over `self.method` for class methods.
+- Use `my_method(my_arg)` not `my_method( my_arg )` or `my_method my_arg`.
+- Use `a = b` and not `a=b`.
+- Use `assert_not` methods instead of `refute`.
+- Prefer `method { do_stuff }` instead of `method{do_stuff}` for single-line blocks.
+- Follow the conventions in the source you see used already.
 
 The above are guidelines - please use your best judgment in using them.
 
@@ -401,12 +394,14 @@ For MySQL and PostgreSQL, it is sufficient to run:
 $ cd activerecord
 $ bundle exec rake db:mysql:build
 ```
+
 Or:
 
 ```bash
 $ cd activerecord
 $ bundle exec rake db:postgresql:build
 ```
+
 This is not necessary for SQLite3.
 
 This is how you run the Active Record test suite only for SQLite3:
@@ -715,7 +710,6 @@ Once you have resolved all conflicts and made sure all the tests are passing, pu
 
 And then... think about your next contribution!
 
-Rails Contributors
-------------------
+## Rails Contributors
 
 All contributions get credit in [Rails Contributors](https://contributors.rubyonrails.org).
